@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --main-color-blue: #003087;
+    --hover-color-blue: #002266;
+    --background-color-blue: #0044aa;
+    --main-color-red: #D52B1E;
+    --hover-color-red: #b52418;
+    --text-color-white: white;
+    --hover-color-white: #D1D5DB;
+    --text-color-grey: #4B5563;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+h2 {
+    color: var(--main-color-blue);
+    font-size: 3rem;
+    padding-top: 3rem;
+
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../Untitled-design.jpg");
+    background-size: cover;
+}
+
+
+@media screen and (max-height: 950px) {
+    header {
+        height: 100vh;
+    }
+}
+
+.header-container {
+    color: var(--text-color-white);
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.header-container>p {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header-a-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header-a-container>a {
+    margin-right: 10px;
+}
+
+.header-a-contact {
+    height: fit-content;
+    width: fit-content;
+    padding: 15px;
+    background-color: var(--main-color-red);
+    border-radius: 20px;
+    color: var(--text-color-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.header-a-contact:hover {
+    background-color: var(--hover-color-red);
+}
+
+.header-a-reservation {
+    height: fit-content;
+    width: fit-content;
+    padding: 15px;
+    background-color: var(--text-color-white);
+    border-radius: 20px;
+    color: var(--main-color-blue);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.header-a-reservation:hover {
+    background-color: var(--hover-color-white);
+}
+
+/* Page after header */
+.full-page-container {
+    background: #0044AA;
+    background: linear-gradient(180deg, rgba(40, 114, 224, 0.368) 0%, rgba(252, 252, 252, 1) 100%);
+}
+
+/* O mně */
+
+.omne-section {
+    text-align: center;
+}
+
+.omne-list-container {
+    display: flex;
+    background-color: var(--text-color-white);
+    width: 75%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: start;
+    color: var(--text-color-grey);
+}
+
+@media screen and (max-width: 500px) {
+    .omne-list-container {
+        display: block;
+    }
+}
+
+.omne-list-container>ul {
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.omne-list-container>ul>li {
+    padding: 3px;
+}
+
+/* Co nabízím */
+.conabizim-section {
+    text-align: center;
+}
+
+.container-offer {
+    display: flex;
+    flex-direction: row;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 650px) {
+    .container-offer {
+        flex-direction: column;
+    }
+}
+
+.card-offer {
+    width: 100%;
+    background-color: var(--text-color-white);
+    margin: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 20px;
+}
+
+.card-offer:hover {
+    box-shadow: 5px 5px var(--hover-color-white);
+}
+
+.card-offer>h4 {
+    color: var(--main-color-blue);
+    font-size: 1.5rem;
+}
+
+.card-offer>p {
+    color: var(--text-color-grey);
+    font-size: 1.2rem;
+}
+
+/* Cenik */
+.pricing-section {
+    text-align: center;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+}
+
+.card-pricing {
+    background-color: #F4F9FF;
+    /* Only color not variable */
+    margin: 1rem;
+    padding: 2rem;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    border: solid var(--main-color-blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-pricing:hover {
+    box-shadow: 7px 7px var(--hover-color-white);
+}
+
+.card-pricing>h3 {
+    color: var(--main-color-blue);
+    font-size: 1.5rem;
+}
+
+.pricing-blue {
+    color: var(--main-color-blue);
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.pricing-red {
+    color: var(--main-color-red);
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.pricing-grey {
+    color: var(--text-color-grey);
+    font-size: 1.15rem;
+    margin-top: 5px;
+}
+
+
+.card-pricing>a {
+    background-color: var(--main-color-blue);
+    padding: 10px;
+    margin-top: auto;
+    border-radius: 10px;
+}
+
+.card-pricing>a {
+    color: var(--text-color-white);
+    background-color: var(--main-color-blue);
+    padding: 10px;
+}
+
+/* Kontakt */
+.contact-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 20px;
+    padding: 3rem;
+    color: var(--text-color-white);
+    background: #003088;
+    background: linear-gradient(90deg, rgba(0, 48, 136, 1) 0%, rgba(0, 68, 170, 1) 100%);
+}
+
+@media screen and (max-width: 600px) {
+    .contact-container {
+        padding: 1.5rem;
+    }
+}
+
+.contact-container>h2 {
+    color: var(--text-color-white);
+    padding-top: 0;
+    margin-bottom: 15px;
+}
+
+.contact-container>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.contact-container>div>a {
+    color: var(--text-color-white);
+    font-size: 1.3rem;
+}
+
+.contact-container>div>a:hover {
+    color: var(--main-color-red);
+}
+
+/* Navigace formular */
+
+nav {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+nav > a{
+    color: var(--main-color-blue);
+}
+
+nav > a:hover {
+    color: var(--main-color-red);
+}
+
+/* Formular */
+
+svg {
+    vertical-align: middle;
+}
+
+.form-section {
+    text-align: center;
+}
+
+.form-section>form {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 2rem;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #d7dbe1;
+    /* Second color not in variable */
+}
+
+@media screen and (max-width: 600px) {
+    .form-section>form {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--hover-color-blue);
+    display: block;
+    text-align: start;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    height: 3rem;
+    border: solid 2px var(--main-color-blue);
+    border-radius: 10px;
+    outline: none;
+    padding-left: 5px;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border: solid 2px var(--hover-color-red);
+}
+
+#message {
+    height: 10rem;
+    font-size: 1.2rem;
+}
+
+.form-field,
+.form-field-full {
+    padding: 5px;
+}
+
+.form-field-full {
+    grid-column: 1 / -1;
+}
+
+
+input[type=submit] {
+    background-color: var(--main-color-red);
+    color: var(--text-color-white);
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: var(--hover-color-red);
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-color-blue);
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    color: var(--hover-color-white);
+}
