@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CompleteCatchersCo.</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
 </head>
 
 <body>
@@ -16,7 +20,7 @@
         <h2>Rezervace</h2>
         <p>Vyplňte formulář níže a já se vám ozvu co nejdříve pro potvrzení.</p>
         <form id="my-form" method="POST"
-            action="https://script.google.com/macros/s/AKfycbxFhHR60f_6-JWOKv7hr3PswtN-SmSNa8IbMNuoQlDeMakQSfw2opo-1UGvrdd2FmA/exec">
+            action="https://script.google.com/macros/s/AKfycbyLJokIpZf-ZfUz43_ra47cUF9dczCcvpe7sP52gur80-VkT3jGK3gsWTZQnZyXK7g4/exec">
             <div class="form-field">
                 <label for="name"><svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"
                         viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -59,22 +63,31 @@
                         <path fill="rgb(0, 48, 135)"
                             d="M267.7 576.9C267.7 576.9 267.7 576.9 267.7 576.9L229.9 603.6C222.6 608.8 213 609.4 205 605.3C197 601.2 192 593 192 584L192 512L160 512C107 512 64 469 64 416L64 192C64 139 107 96 160 96L480 96C533 96 576 139 576 192L576 416C576 469 533 512 480 512L359.6 512L267.7 576.9zM332 472.8C340.1 467.1 349.8 464 359.7 464L480 464C506.5 464 528 442.5 528 416L528 192C528 165.5 506.5 144 480 144L160 144C133.5 144 112 165.5 112 192L112 416C112 442.5 133.5 464 160 464L216 464C226.4 464 235.3 470.6 238.6 479.9C239.5 482.4 240 485.1 240 488L240 537.7C272.7 514.6 303.3 493 331.9 472.8z" />
                     </svg> Zpráva (volitelné)</label>
-                <textarea id="message" placeholder="Napište mi něco o vašich cílech a zkušenostech..."></textarea>
+                <textarea id="message" name="message"
+                    placeholder="Napište mi něco o vašich cílech a zkušenostech..."></textarea>
             </div>
             <div class="form-field-full">
-                <input type="submit" value="Odeslat rezervaci">
+                <input type="submit" value="Odeslat rezervaci" id="submit">
             </div>
         </form>
+        <p id="Send">Váš formulář byl úspěšně odeslán.</p>
     </section>
 
     <footer>
-        <p>© 2026 Martin Zelenka Online Coaching. Všechna práva vyhrazena.</p>
+        <p>© <span id="FooterYear"></span> Martin Zelenka CompleteCatchersCo. Všechna práva vyhrazena.</p>
     </footer>
 
     <script>
+        let nameO = document.getElementById("name");
+        let email = document.getElementById("email");
+        let number = document.getElementById("number");
+        let message = document.getElementById("message");
+
         window.addEventListener("load", function () {
             const form = document.getElementById('my-form');
             form.addEventListener("submit", function (e) {
+                let btn = document.getElementById("submit")
+                btn.disabled = true;    
                 e.preventDefault();
                 const data = new FormData(form);
                 const action = e.target.action;
@@ -83,10 +96,19 @@
                     body: data,
                 })
                     .then(() => {
-                        alert("Vaše rezervace byla uspěšně odeslaná.");
+                        let Send = document.getElementById("Send").style.display = "block";
+                        btn.disabled = false;
+                        nameO.value = "";
+                        email.value = "";
+                        number.value = "";
+                        message.value = "";
                     })
             });
         });
+
+        let YearO = document.getElementById("FooterYear")
+        let ADate = new Date().getFullYear()
+        YearO.innerHTML = ADate
 
     </script>
 </body>

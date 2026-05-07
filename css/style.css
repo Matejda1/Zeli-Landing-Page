@@ -9,6 +9,8 @@
     --text-color-white: white;
     --hover-color-white: #D1D5DB;
     --text-color-grey: #4B5563;
+    --text-color-good: green;
+    --text-color-bad: red;
 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -49,8 +51,10 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../Untitled-design.jpg");
-    background-size: cover;
+    background-image: url("../Photos/Logo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    max-width: 100%;
 }
 
 
@@ -63,6 +67,16 @@ header {
 .header-container {
     color: var(--text-color-white);
     text-align: center;
+}
+
+@media screen and (max-height: 950px) {
+    .header-container {
+        margin-top: 35%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
 h1 {
@@ -114,17 +128,6 @@ h1 {
     background-color: var(--hover-color-white);
 }
 
-.header-down {
-    margin-top: 50px;
-    animation: bounce 2s ease infinite;
-}
-
-@keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-30px);}
-	60% {transform: translateY(-15px);}
-}
-
 /* Page after header */
 .full-page-container {
     background: #0044AA;
@@ -163,6 +166,30 @@ h1 {
 
 .omne-list-container>ul>li {
     padding: 3px;
+}
+
+.omne-photos-container {
+    display: flex;
+    margin-top: 1.2rem;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 950px) {
+    .omne-photos-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+.omne-photos-container>img {
+    width: 350px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.omne-photos-container>img:hover {
+    box-shadow: 5px 5px var(--hover-color-white);
 }
 
 /* Co nabízím */
@@ -331,11 +358,11 @@ nav {
     font-size: 1.1rem;
 }
 
-nav > a{
+nav>a {
     color: var(--main-color-blue);
 }
 
-nav > a:hover {
+nav>a:hover {
     color: var(--main-color-red);
 }
 
@@ -420,6 +447,16 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: var(--hover-color-red);
+}
+
+#Send{
+    display: none;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+#Send {
+    color: var(--text-color-good);
 }
 
 /* Footer */
